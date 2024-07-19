@@ -1,0 +1,176 @@
+:root {
+  --ffamily: "Space Mono", monospace;
+  --strongcyan: hsl(172, 67%, 45%);
+  --darkcyan: hsl(183, 100%, 15%);
+  --grayishcyan: hsl(186, 14%, 43%);
+  --cyan: hsl(184, 14%, 56%);
+  --lightcyan: hsl(185, 41%, 84%);
+  --verycyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --inputsize: 24px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--ffamily);
+    font-weight: 700;
+}
+body{
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--lightcyan);
+}
+.calculator{
+    display: flex;
+    background-color: var(--white);
+    gap: 30px;
+    padding: 20px;
+    border-radius: 20px;
+}
+/* removing up-down arrow from input filed */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* left section starts from here */
+.left-section{
+    background-color: #fff;
+    /* flex: 50%; */
+    margin-left: 20px;
+}
+.title{
+    color: var(--grayishcyan);
+    margin: 5px 0;
+    font-size: 14px;
+}
+.input-filed{
+    position: relative;
+}
+.input-area{
+    background-color:var(--verycyan);
+    border: 0;
+    outline:0 ;
+    font-size: var(--inputsize);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--darkcyan);
+    text-align: end;
+}
+.icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+.left-middle{
+    width: 100%;
+    margin: 30px 0;
+}
+.options-container{
+    display: grid;
+    place-items: centre;
+    grid-template-columns: repeat(3,auto);
+    gap: 10px;
+    width: 100%;
+    margin: 15px 0;
+}
+.option-btn{
+    background-color: var(--darkcyan);
+    color: var(--white);
+    font-size: 15px;
+    width: 95px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+}
+.option-input{
+    width: 65px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    font-size: 15px;
+    background-color: var(--verycyan);
+    text-align: center;
+}
+
+/* left section ends here */
+/* Right section stars here */
+.right-section{
+    background-color: var(--darkcyan);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tip-amount{
+    display: flex;
+    gap: 70px;
+    align-items: center;
+}
+.head{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+.txt{
+    color: var(--grayishcyan);
+}
+.right-top{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.tip-amount h1{
+    font-size: 2em;
+    color: var(--strongcyan);
+}
+.reset-btn{
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    background-color: var(--strongcyan);
+    color: var(--darkcyan);
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        overflow: scroll;
+        margin: 60px auto;
+    }
+    .calculator{
+        flex-direction: column;
+        width: 90%;
+    }
+    .options-container{
+        grid-template-columns: repeat(2,auto);
+    }
+    .option-btn{
+        font-size: 24px;
+        width: 165px;
+        padding: 10px 10px;
+    }
+    .option-input{
+        width: 135px;
+    }
+    .title{
+        font-size: 20px;
+    }
+    .tip-amount{
+        gap: 130px;
+    }
+  }
