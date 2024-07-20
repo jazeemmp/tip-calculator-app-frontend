@@ -37,10 +37,12 @@ function calculateTip() {
     const total = (bill / people) + tip; 
     tipAmount.textContent = `$${tip.toFixed(2)}`;
     totalAmount.textContent = `$${total.toFixed(2)}`; 
+    resetBtn.classList.add('active')
   }
   
 }
 resetBtn.addEventListener('click',()=>{
+    resetBtn.classList.remove('active')
     billInput.value = "";
     peopleInput.value ="";
     buttons.forEach((btn) => btn.classList.remove("active"));
